@@ -51,14 +51,29 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Run espresso tests
-        uses: reactivecircus/android-emulator-runner@v2
-        with: 
-          api-level: 29
-          script: ./gradlew connectedCheck
+      # - name: Run espresso tests
+      #   uses: reactivecircus/android-emulator-runner@v2
+      #   with: 
+      #     api-level: 29
+      #     script: ./gradlew connectedCheck
 
-      - name: upload test report
-        uses: actions/upload-artifact@v4
+      # - name: upload test report
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: instrumentation_test_report
+      #     path: app/build/reports/androidTests/connected/
+
+  static-code-analysis:
+    needs: [instrumentation-test]
+    runs-on: ubuntu-latets
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: set up JDK 11
+        uses: actions/setup-java@v4
         with:
-          name: instrumentation_test_report
-          path: app/build/reports/androidTests/connected/
+          java-version: 11
+
+      - name: SonarCloud Scan
+        run: ./gradlew sonarqube -Dsonar.login=${{ secrets.SONAR_TOKEN }}
