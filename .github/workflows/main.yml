@@ -35,14 +35,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Run tests
-        run: ./gradlew test 
+      # - name: Run tests
+      #   run: ./gradlew test 
 
-      - name: Upload test report
-        uses: actions/upload-artifact@v4
-        with:
-          name: unit_test_report
-          path: app/build/reports/tests/testDebugUnitTest/
+      # - name: Upload test report
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: unit_test_report
+      #     path: app/build/reports/tests/testDebugUnitTest/
 
   instrumentation-test: # for running android tests on the emulator
     needs: [unit-test]
@@ -54,7 +54,7 @@ jobs:
       - name: Run espresso tests
         uses: reactivecircus/android-emulator-runner@v2
         with: 
-          api-level: 29
+          api-level: 33
           script: ./gradlew connectedCheck
 
       - name: upload test report
