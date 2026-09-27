@@ -27,3 +27,19 @@ jobs:
         with:
           name: lint.html
           path: app/build/reports/lint-results-debug.html
+
+  unit-test: #for running tests withing the codebase present in the app/src folder
+    needs: [lint]
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Run tests
+        run: ./gradlew test 
+
+      - name: Upload test report
+        uses: actions/upload-artifact@v4
+        with:
+          name: unit_test_report
+          path: app/build/reports/tests/testDebugUnitTest/
