@@ -5,6 +5,10 @@ on:
   pull_request:
     branches: [ main ]
   workflow_dispatch:
+
+env:
+  SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
 jobs:
   lint:
     runs-on: ubuntu-latest
@@ -76,4 +80,4 @@ jobs:
           java-version: 11
 
       - name: SonarCloud Scan
-        run: ./gradlew sonarqube -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+        run: ./gradlew app:sonarqube -Dsonar.login=${{ secrets.SONAR_TOKEN }}
