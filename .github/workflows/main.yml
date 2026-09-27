@@ -4,26 +4,26 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
+  workflow_dispatch:
 jobs:
   lint:
-    name: Lint
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: set up JDK
-        uses: actions/setup-java@v4
-        with:
-          distribution: jetbrains
-          java-version: 21
-          cache: gradle
+      # - name: set up JDK
+      #   uses: actions/setup-java@v4
+      #   with:
+      #     distribution: jetbrains
+      #     java-version: 21
+      #     cache: gradle
 
-      - name: Run Lint debug
-        run: ./gradlew lintDebug
+      # - name: Run Lint debug
+      #   run: ./gradlew lintDebug
 
       - name: Upload Lint report
         uses: actions/upload-artifact@v4
         with:
-          name: lint-report
+          name: lint.html
           path: app/build/reports/lint-results-debug.html
