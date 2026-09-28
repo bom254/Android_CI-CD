@@ -22,7 +22,7 @@ public class FillExpenseNotificationReceiver extends BroadcastReceiver {
     stackBuilder.addParentStack(MainActivity.class);
     stackBuilder.addNextIntent(notificationIntent);
 
-    PendingIntent pendingIntent = stackBuilder.getPendingIntent(0, PendingIntent.FLAG_ONE_SHOT);
+    PendingIntent pendingIntent = stackBuilder.getPendingIntent(0, PendingIntent.FLAG_ONE_SHOT | PendingIntent.FLAG_IMMUTABLE);
 
     NotificationCompat.Builder builder = new NotificationCompat.Builder(context);
 

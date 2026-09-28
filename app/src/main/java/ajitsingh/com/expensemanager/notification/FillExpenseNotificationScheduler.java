@@ -7,21 +7,26 @@ import android.content.Intent;
 
 import java.util.Calendar;
 
+import ajitsingh.com.expensemanager.receiver.FillExpenseNotificationReceiver;
+
 public class FillExpenseNotificationScheduler {
 
-  public void schedule(Context context) {
-    AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
+    public void schedule(Context context) {
+        Intent notificationIntent = new Intent(context, FillExpenseNotificationReceiver.class);
 
-    Intent notificationIntent = new Intent("android.media.action.DISPLAY_NOTIFICATION");
-    notificationIntent.addCategory("android.intent.category.DEFAULT");
+        PendingIntent broadcast = PendingIntent.getBroadcast(
+            context,
+            100,
+            notificationIntent,
+            PendingIntent.FLAG_CANCEL_CURRENT | PendingIntent.FLAG_IMMUTABLE
+        );
 
-    PendingIntent broadcast = PendingIntent.getBroadcast(context, 100, notificationIntent, PendingIntent.FLAG_CANCEL_CURRENT);
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.HOUR_OF_DAY, 21);
+        calendar.set(Calendar.MINUTE, 0);
+        calendar.set(Calendar.SECOND, 0);
 
-    Calendar calendar = Calendar.getInstance();
-    calendar.set(Calendar.HOUR_OF_DAY, 21);
-    calendar.set(Calendar.MINUTE, 00);
-    calendar.set(Calendar.SECOND, 00);
-
-    alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), broadcast);
-  }
+        AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
+        alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), broadcast);
+    }
 }
