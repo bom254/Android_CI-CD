@@ -28,22 +28,14 @@ jobs:
   unit-test: #for running tests withing the codebase present in the app/src folder
     needs: [lint]
     runs-on: ubuntu-latest
-    steps:
+    steps: 
       - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: set up JDK
-        uses: actions/setup-java@v4
-        with:
-          distribution: temurin
-          java-version: ${{ env.JAVA_VERSION }}
-          cache: gradle
+        uses: actions/checkout@v3
 
       - name: Run tests
-        run: ./gradlew testDebugUnitTest --stacktrace
+        run: ./gradlew test 
 
       - name: Upload test report
-        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: unit_test_report
