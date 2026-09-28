@@ -50,8 +50,11 @@ jobs:
 
       - name: Run espresso tests
         uses: reactivecircus/android-emulator-runner@v2
-        with: 
-          api-level: 29
+        with:
+          api-level: 34
+          target: google_apis
+          arch: arm64-v8a         
+          profile: pixel_5
           script: ./gradlew connectedCheck
 
       - name: upload test report
@@ -59,7 +62,7 @@ jobs:
         with:
           name: instrumentation_test_report
           path: app/build/reports/androidTests/connected/
-          
+
   static-code-analysis:
     needs: [instrumentation-test]
     runs-on: ubuntu-latest
