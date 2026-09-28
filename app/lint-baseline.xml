@@ -1,0 +1,2179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<issues format="6" by="lint 9.1.0" type="baseline" client="gradle" dependencies="false" name="AGP (9.1.0)" variant="all" version="9.1.0">
+
+    <issue
+        id="ScrollViewSize"
+        message="This RelativeLayout should use `android:layout_height=&quot;wrap_content&quot;`"
+        errorLine1="        android:layout_height=&quot;match_parent&quot;>"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/expense_graph.xml"
+            line="12"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="NotificationPermission"
+        message="When targeting Android 13 or higher, posting a permission requires holding the `POST_NOTIFICATIONS` permission"
+        errorLine1="    notificationManager.notify(0, notification);"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/receiver/FillExpenseNotificationReceiver.java"
+            line="37"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="OldTargetApi"
+        message="Not targeting the latest versions of Android; compatibility modes apply. Consider testing and updating this version. Consult the `android.os.Build.VERSION_CODES` javadoc for details."
+        errorLine1="        targetSdk 34 "
+        errorLine2="        ~~~~~~~~~~~~">
+        <location
+            file="build.gradle"
+            line="11"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="Range"
+        message="Value must be ≥ 0 but `getColumnIndex` can be -1"
+        errorLine1="        String type = cursor.getString(cursor.getColumnIndex(ExpenseTypeTable.TYPE));"
+        errorLine2="                                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/database/ExpenseDatabaseHelper.java"
+            line="50"
+            column="40"/>
+    </issue>
+
+    <issue
+        id="Range"
+        message="Value must be ≥ 0 but `getColumnIndex` can be -1"
+        errorLine1="        String type = cursor.getString(cursor.getColumnIndex(ExpenseTable.TYPE));"
+        errorLine2="                                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/database/ExpenseDatabaseHelper.java"
+            line="124"
+            column="40"/>
+    </issue>
+
+    <issue
+        id="Range"
+        message="Value must be ≥ 0 but `getColumnIndex` can be -1"
+        errorLine1="        String amount = cursor.getString(cursor.getColumnIndex(ExpenseTable.AMOUNT));"
+        errorLine2="                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/database/ExpenseDatabaseHelper.java"
+            line="125"
+            column="42"/>
+    </issue>
+
+    <issue
+        id="Range"
+        message="Value must be ≥ 0 but `getColumnIndex` can be -1"
+        errorLine1="        String date = cursor.getString(cursor.getColumnIndex(ExpenseTable.DATE));"
+        errorLine2="                                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/database/ExpenseDatabaseHelper.java"
+            line="126"
+            column="40"/>
+    </issue>
+
+    <issue
+        id="Range"
+        message="Value must be ≥ 0 but `getColumnIndex` can be -1"
+        errorLine1="        String id = cursor.getString(cursor.getColumnIndex(ExpenseTable._ID));"
+        errorLine2="                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/database/ExpenseDatabaseHelper.java"
+            line="127"
+            column="38"/>
+    </issue>
+
+    <issue
+        id="SimpleDateFormat"
+        message="To get local formatting use `getDateInstance()`, `getDateTimeInstance()`, or `getTimeInstance()`, or use `new SimpleDateFormat(String template, Locale locale)` with for example `Locale.US` for ASCII dates."
+        errorLine1="    DateFormat formatter = new SimpleDateFormat(&quot;dd-MM-yyyy&quot;);"
+        errorLine2="                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/utils/DateUtil.java"
+            line="41"
+            column="28"/>
+    </issue>
+
+    <issue
+        id="SimpleDateFormat"
+        message="To get local formatting use `getDateInstance()`, `getDateTimeInstance()`, or `getTimeInstance()`, or use `new SimpleDateFormat(String template, Locale locale)` with for example `Locale.US` for ASCII dates."
+        errorLine1="    SimpleDateFormat simpleDateFormat = new SimpleDateFormat(format);"
+        errorLine2="                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/utils/DateUtil.java"
+            line="53"
+            column="41"/>
+    </issue>
+
+    <issue
+        id="InflateParams"
+        message="Avoid passing `null` as the view root (needed to resolve layout parameters on the inflated layout&apos;s root element)"
+        errorLine1="      convertView = inflater.inflate(R.layout.drawer_list_item, null);"
+        errorLine2="                                                                ~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/adapter/DrawerListViewAdapter.java"
+            line="41"
+            column="65"/>
+    </issue>
+
+    <issue
+        id="RedundantLabel"
+        message="Redundant label can be removed"
+        errorLine1="            android:label=&quot;@string/app_name&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/AndroidManifest.xml"
+            line="13"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="AndroidGradlePluginVersion"
+        message="A newer version of Gradle than 9.3.1 is available: 9.8.0"
+        errorLine1="distributionUrl=https\://services.gradle.org/distributions/gradle-9.3.1-bin.zip"
+        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="$HOME/Documents/Devops/ExpenseManager/gradle/wrapper/gradle-wrapper.properties"
+            line="4"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of `compileSdk` than 34 is available: 36"
+        errorLine1="    compileSdk 34 "
+        errorLine2="    ~~~~~~~~~~~~~">
+        <location
+            file="build.gradle"
+            line="6"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.appcompat:appcompat than 1.2.0 is available: 1.8.0"
+        errorLine1="    implementation &apos;androidx.appcompat:appcompat:1.2.0&apos;"
+        errorLine2="                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle"
+            line="45"
+            column="20"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.test.ext:junit than 1.1.2 is available: 1.3.0"
+        errorLine1="    androidTestImplementation &apos;androidx.test.ext:junit:1.1.2&apos;"
+        errorLine2="                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle"
+            line="53"
+            column="31"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.test.espresso:espresso-core than 3.3.0 is available: 3.7.0"
+        errorLine1="    androidTestImplementation &apos;androidx.test.espresso:espresso-core:3.3.0&apos;"
+        errorLine2="                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle"
+            line="54"
+            column="31"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.test.espresso:espresso-contrib than 3.3.0 is available: 3.7.0"
+        errorLine1="    androidTestImplementation &apos;androidx.test.espresso:espresso-contrib:3.3.0&apos;"
+        errorLine2="                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle"
+            line="55"
+            column="31"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.test.espresso:espresso-intents than 3.3.0 is available: 3.7.0"
+        errorLine1="    androidTestImplementation &apos;androidx.test.espresso:espresso-intents:3.3.0&apos;"
+        errorLine2="                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle"
+            line="56"
+            column="31"/>
+    </issue>
+
+    <issue
+        id="NewerVersionAvailable"
+        message="A newer version of joda-time:joda-time than 2.8.2 is available: 2.14.4"
+        errorLine1="    implementation &apos;joda-time:joda-time:2.8.2&apos;"
+        errorLine2="                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle"
+            line="47"
+            column="20"/>
+    </issue>
+
+    <issue
+        id="NewerVersionAvailable"
+        message="A newer version of junit:junit than 4.12 is available: 4.13.2"
+        errorLine1="    testImplementation &apos;junit:junit:4.12&apos;"
+        errorLine2="                       ~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle"
+            line="49"
+            column="24"/>
+    </issue>
+
+    <issue
+        id="NewerVersionAvailable"
+        message="A newer version of org.mockito:mockito-core than 1.10.19 is available: 5.24.0"
+        errorLine1="    testImplementation &apos;org.mockito:mockito-core:1.10.19&apos;"
+        errorLine2="                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle"
+            line="50"
+            column="24"/>
+    </issue>
+
+    <issue
+        id="NewerVersionAvailable"
+        message="A newer version of joda-time:joda-time than 2.8.2 is available: 2.14.4"
+        errorLine1="    testImplementation &apos;joda-time:joda-time:2.8.2&apos;"
+        errorLine2="                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle"
+            line="51"
+            column="24"/>
+    </issue>
+
+    <issue
+        id="SpUsage"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes"
+        errorLine1="        android:textSize=&quot;25dp&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/current_week_expenses.xml"
+            line="13"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="SpUsage"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes"
+        errorLine1="                android:textSize=&quot;25dp&quot;"
+        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/current_week_expenses.xml"
+            line="37"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="SpUsage"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes"
+        errorLine1="        android:textSize=&quot;20dp&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/drawer_list_item.xml"
+            line="13"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="SpUsage"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes"
+        errorLine1="            android:textSize=&quot;25dp&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/expense_graph.xml"
+            line="20"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="SpUsage"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes"
+        errorLine1="                    android:textSize=&quot;25dp&quot;/>"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/expense_graph.xml"
+            line="44"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="SpUsage"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes"
+        errorLine1="        android:textSize=&quot;20dp&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/expense_header_text_box.xml"
+            line="12"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="SpUsage"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes"
+        errorLine1="        android:textSize=&quot;17dp&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/expense_text_box.xml"
+            line="12"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="SpUsage"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes"
+        errorLine1="        android:textSize=&quot;25dp&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/new_category.xml"
+            line="17"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="SpUsage"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes"
+        errorLine1="        android:textSize=&quot;25dp&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/new_expense.xml"
+            line="17"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="SpUsage"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes"
+        errorLine1="        &lt;item name=&quot;android:textSize&quot;>20dp&lt;/item>"
+        errorLine2="                                      ~~~~">
+        <location
+            file="src/main/res/values/styles.xml"
+            line="24"
+            column="39"/>
+    </issue>
+
+    <issue
+        id="SpUsage"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes"
+        errorLine1="        &lt;item name=&quot;android:textSize&quot;>20dp&lt;/item>"
+        errorLine2="                                      ~~~~">
+        <location
+            file="src/main/res/values/styles.xml"
+            line="32"
+            column="39"/>
+    </issue>
+
+    <issue
+        id="SpUsage"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes"
+        errorLine1="        android:textSize=&quot;25dp&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/todays_expenses.xml"
+            line="13"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="SpUsage"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes"
+        errorLine1="                android:textSize=&quot;25dp&quot;"
+        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/todays_expenses.xml"
+            line="37"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="UnspecifiedImmutableFlag"
+        message="Missing `PendingIntent` mutability flag"
+        errorLine1="    PendingIntent broadcast = PendingIntent.getBroadcast(context, 100, notificationIntent, PendingIntent.FLAG_CANCEL_CURRENT);"
+        errorLine2="                                                                                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/notification/FillExpenseNotificationScheduler.java"
+            line="18"
+            column="92"/>
+    </issue>
+
+    <issue
+        id="ObsoleteSdkInt"
+        message="This folder configuration (`v21`) is unnecessary; `minSdkVersion` is 24. Merge all the resources in this folder into `values`.">
+        <location
+            file="src/main/res/values-v21"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.drawable.button_secondary` appears to be unused"
+        errorLine1="&lt;selector xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;>"
+        errorLine2="^">
+        <location
+            file="src/main/res/drawable/button_secondary.xml"
+            line="2"
+            column="1"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.color.red` appears to be unused"
+        errorLine1="    &lt;color name=&quot;red&quot;>#B50012&lt;/color>"
+        errorLine2="           ~~~~~~~~~~">
+        <location
+            file="src/main/res/values/colors.xml"
+            line="5"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.color.bright_red` appears to be unused"
+        errorLine1="    &lt;color name=&quot;bright_red&quot;>#ffab271b&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/colors.xml"
+            line="6"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.color.dark_red` appears to be unused"
+        errorLine1="    &lt;color name=&quot;dark_red&quot;>#ffb51139&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/colors.xml"
+            line="7"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.color.grey` appears to be unused"
+        errorLine1="    &lt;color name=&quot;grey&quot;>#ff8b8b8b&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/colors.xml"
+            line="8"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.color.dark_grey` appears to be unused"
+        errorLine1="    &lt;color name=&quot;dark_grey&quot;>#ff717171&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/colors.xml"
+            line="9"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.color.black` appears to be unused"
+        errorLine1="    &lt;color name=&quot;black&quot;>#ff000000&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/colors.xml"
+            line="10"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.color.transparent` appears to be unused"
+        errorLine1="    &lt;color name=&quot;transparent&quot;>#FFFFFF&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/colors.xml"
+            line="11"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.drawable.transparent_background` appears to be unused"
+        errorLine1="    &lt;drawable name=&quot;transparent_background&quot;>#00000000&lt;/drawable>"
+        errorLine2="              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/colors.xml"
+            line="15"
+            column="15"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.drawable.header_background_color` appears to be unused"
+        errorLine1="&lt;selector xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;>"
+        errorLine2="^">
+        <location
+            file="src/main/res/drawable/header_background_color.xml"
+            line="2"
+            column="1"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.mipmap.ic_menu_closed` appears to be unused">
+        <location
+            file="src/main/res/mipmap-hdpi/ic_menu_closed.png"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.mipmap.ic_menu_opened` appears to be unused">
+        <location
+            file="src/main/res/mipmap-hdpi/ic_menu_opened.png"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.style.ExpenseManagerTheme` appears to be unused"
+        errorLine1="    &lt;style name=&quot;ExpenseManagerTheme&quot; parent=&quot;android:Theme.Holo.Light&quot;>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/styles.xml"
+            line="2"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.style.MyActionBar` appears to be unused"
+        errorLine1="    &lt;style name=&quot;MyActionBar&quot; parent=&quot;@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse&quot;>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/styles.xml"
+            line="9"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.style.TabTextStyle` appears to be unused"
+        errorLine1="    &lt;style name=&quot;TabTextStyle&quot; parent=&quot;@android:style/Widget.Holo.Light.ActionBar.TabText&quot;>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/styles.xml"
+            line="13"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.style.MyTabWidget` appears to be unused"
+        errorLine1="    &lt;style name=&quot;MyTabWidget&quot; parent=&quot;@android:style/Widget.Holo.TabWidget&quot;>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/styles.xml"
+            line="17"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.style.button_secondary` appears to be unused"
+        errorLine1="    &lt;style name=&quot;button_secondary&quot;>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/styles.xml"
+            line="29"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="SyntheticAccessor"
+        message="Access to `private` field `drawerLayout` of class `MainActivity` requires synthetic accessor"
+        errorLine1="        drawerLayout.closeDrawer(GravityCompat.START);"
+        errorLine2="        ~~~~~~~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/activity/MainActivity.java"
+            line="172"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="SyntheticAccessor"
+        message="Access to `private` field `actionBar` of class `MainActivity` requires synthetic accessor"
+        errorLine1="        actionBar.setSelectedNavigationItem(i);"
+        errorLine2="        ~~~~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/activity/MainActivity.java"
+            line="198"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="UselessParent"
+        message="This `LinearLayout` layout or its `LinearLayout` parent is unnecessary; transfer the `background` attribute to the other view"
+        errorLine1="        &lt;LinearLayout"
+        errorLine2="         ~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/current_week_expenses.xml"
+            line="26"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="UselessParent"
+        message="This `LinearLayout` layout or its `LinearLayout` parent is unnecessary; transfer the `background` attribute to the other view"
+        errorLine1="            &lt;LinearLayout"
+        errorLine2="             ~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/expense_graph.xml"
+            line="30"
+            column="14"/>
+    </issue>
+
+    <issue
+        id="UselessParent"
+        message="This `LinearLayout` layout or its `LinearLayout` parent is unnecessary; transfer the `background` attribute to the other view"
+        errorLine1="        &lt;LinearLayout"
+        errorLine2="         ~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/new_category.xml"
+            line="27"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="UselessParent"
+        message="This `LinearLayout` layout or its `LinearLayout` parent is unnecessary; transfer the `background` attribute to the other view"
+        errorLine1="        &lt;LinearLayout"
+        errorLine2="         ~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/new_expense.xml"
+            line="27"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="UselessParent"
+        message="This `LinearLayout` layout or its `LinearLayout` parent is unnecessary; transfer the `background` attribute to the other view"
+        errorLine1="        &lt;LinearLayout"
+        errorLine2="         ~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/todays_expenses.xml"
+            line="26"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="UnusedIds"
+        message="The resource `R.id.add_category` appears to be unused"
+        errorLine1="                android:id=&quot;@+id/add_category&quot;"
+        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/new_category.xml"
+            line="47"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="DuplicateStrings"
+        message="Duplicate string value `Add Category`, used in `action_add_category` and `add_category`"
+        errorLine1="    &lt;string name=&quot;add_category&quot;>Add Category&lt;/string>"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="16"
+            column="5"/>
+        <location
+            file="src/main/res/values/strings.xml"
+            line="17"
+            column="5"
+            message="Duplicates value in `add_category`"/>
+    </issue>
+
+    <issue
+        id="TypographyQuotes"
+        message="Replace apostrophe (&apos;) with typographic apostrophe (’, &amp;#8217;) ?"
+        errorLine1="    &lt;string name=&quot;todays_expenses&quot;>Today\&apos;s Expenses&lt;/string>"
+        errorLine2="                                         ~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="7"
+            column="42"/>
+    </issue>
+
+    <issue
+        id="TypographyQuotes"
+        message="Replace apostrophe (&apos;) with typographic apostrophe (’, &amp;#8217;) ?"
+        errorLine1="    &lt;string name=&quot;current_week_expenses&quot;>Current Week\&apos;s Expenses&lt;/string>"
+        errorLine2="                                                      ~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="8"
+            column="55"/>
+    </issue>
+
+    <issue
+        id="TypographyQuotes"
+        message="Replace apostrophe (&apos;) with typographic apostrophe (’, &amp;#8217;) ?"
+        errorLine1="    &lt;string name=&quot;current_months_expenses&quot;>Current Month\&apos;s Expenses&lt;/string>"
+        errorLine2="                                                         ~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="13"
+            column="58"/>
+    </issue>
+
+    <issue
+        id="ConvertToWebp"
+        message="One or more images in this project can be converted to the WebP format which typically results in smaller file sizes, even for lossless conversion">
+        <location
+            file="src/main/res/mipmap-xxhdpi/ic_launcher.png"/>
+    </issue>
+
+    <issue
+        id="IconDuplicatesConfig"
+        message="The `drawer_shadow.9.png` icon has identical contents in the following configuration folders: mipmap-mdpi, mipmap-xhdpi, mipmap-xxhdpi">
+        <location
+            file="src/main/res/mipmap-xxhdpi/drawer_shadow.9.png"/>
+        <location
+            file="src/main/res/mipmap-xhdpi/drawer_shadow.9.png"/>
+        <location
+            file="src/main/res/mipmap-mdpi/drawer_shadow.9.png"/>
+    </issue>
+
+    <issue
+        id="IconExpectedSize"
+        message="Incorrect icon size for `mipmap-hdpi/ic_menu_closed.png`: expected 48x48, but was 54x54">
+        <location
+            file="src/main/res/mipmap-hdpi/ic_menu_closed.png"/>
+    </issue>
+
+    <issue
+        id="IconExpectedSize"
+        message="Incorrect icon size for `mipmap-mdpi/ic_menu_closed.png`: expected 32x32, but was 36x36">
+        <location
+            file="src/main/res/mipmap-mdpi/ic_menu_closed.png"/>
+    </issue>
+
+    <issue
+        id="IconExpectedSize"
+        message="Incorrect icon size for `mipmap-xhdpi/ic_menu_closed.png`: expected 64x64, but was 72x72">
+        <location
+            file="src/main/res/mipmap-xhdpi/ic_menu_closed.png"/>
+    </issue>
+
+    <issue
+        id="IconExpectedSize"
+        message="Incorrect icon size for `mipmap-xxhdpi/ic_menu_closed.png`: expected 96x96, but was 108x108">
+        <location
+            file="src/main/res/mipmap-xxhdpi/ic_menu_closed.png"/>
+    </issue>
+
+    <issue
+        id="IconExpectedSize"
+        message="Incorrect icon size for `mipmap-hdpi/ic_menu_opened.png`: expected 48x48, but was 72x72">
+        <location
+            file="src/main/res/mipmap-hdpi/ic_menu_opened.png"/>
+    </issue>
+
+    <issue
+        id="IconExpectedSize"
+        message="Incorrect icon size for `mipmap-mdpi/ic_menu_opened.png`: expected 32x32, but was 48x48">
+        <location
+            file="src/main/res/mipmap-mdpi/ic_menu_opened.png"/>
+    </issue>
+
+    <issue
+        id="IconExpectedSize"
+        message="Incorrect icon size for `mipmap-xhdpi/ic_menu_opened.png`: expected 64x64, but was 96x96">
+        <location
+            file="src/main/res/mipmap-xhdpi/ic_menu_opened.png"/>
+    </issue>
+
+    <issue
+        id="IconExpectedSize"
+        message="Incorrect icon size for `mipmap-xxhdpi/ic_menu_opened.png`: expected 96x96, but was 144x144">
+        <location
+            file="src/main/res/mipmap-xxhdpi/ic_menu_opened.png"/>
+    </issue>
+
+    <issue
+        id="SelectableText"
+        message="Consider making the text value selectable by specifying `android:textIsSelectable=&quot;true&quot;`"
+        errorLine1="            &lt;TextView"
+        errorLine2="             ~~~~~~~~">
+        <location
+            file="src/main/res/layout/current_week_expenses.xml"
+            line="35"
+            column="14"/>
+    </issue>
+
+    <issue
+        id="SelectableText"
+        message="Consider making the text value selectable by specifying `android:textIsSelectable=&quot;true&quot;`"
+        errorLine1="    &lt;TextView"
+        errorLine2="     ~~~~~~~~">
+        <location
+            file="src/main/res/layout/drawer_list_item.xml"
+            line="10"
+            column="6"/>
+    </issue>
+
+    <issue
+        id="SelectableText"
+        message="Consider making the text value selectable by specifying `android:textIsSelectable=&quot;true&quot;`"
+        errorLine1="                &lt;TextView"
+        errorLine2="                 ~~~~~~~~">
+        <location
+            file="src/main/res/layout/expense_graph.xml"
+            line="39"
+            column="18"/>
+    </issue>
+
+    <issue
+        id="SelectableText"
+        message="Consider making the text value selectable by specifying `android:textIsSelectable=&quot;true&quot;`"
+        errorLine1="    &lt;TextView"
+        errorLine2="     ~~~~~~~~">
+        <location
+            file="src/main/res/layout/expense_header_text_box.xml"
+            line="7"
+            column="6"/>
+    </issue>
+
+    <issue
+        id="SelectableText"
+        message="Consider making the text value selectable by specifying `android:textIsSelectable=&quot;true&quot;`"
+        errorLine1="    &lt;TextView"
+        errorLine2="     ~~~~~~~~">
+        <location
+            file="src/main/res/layout/expense_text_box.xml"
+            line="7"
+            column="6"/>
+    </issue>
+
+    <issue
+        id="SelectableText"
+        message="Consider making the text value selectable by specifying `android:textIsSelectable=&quot;true&quot;`"
+        errorLine1="            &lt;TextView"
+        errorLine2="             ~~~~~~~~">
+        <location
+            file="src/main/res/layout/todays_expenses.xml"
+            line="35"
+            column="14"/>
+    </issue>
+
+    <issue
+        id="TextFields"
+        message="This text field does not specify an `inputType`"
+        errorLine1="            &lt;EditText"
+        errorLine2="             ~~~~~~~~">
+        <location
+            file="src/main/res/layout/new_category.xml"
+            line="36"
+            column="14"/>
+    </issue>
+
+    <issue
+        id="Autofill"
+        message="Missing `autofillHints` attribute"
+        errorLine1="            &lt;EditText"
+        errorLine2="             ~~~~~~~~">
+        <location
+            file="src/main/res/layout/new_category.xml"
+            line="36"
+            column="14"/>
+    </issue>
+
+    <issue
+        id="Autofill"
+        message="Missing `autofillHints` attribute"
+        errorLine1="            &lt;EditText"
+        errorLine2="             ~~~~~~~~">
+        <location
+            file="src/main/res/layout/new_expense.xml"
+            line="36"
+            column="14"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders."
+        errorLine1="    totalExpenseTextBox.setText(getString(R.string.total_expense) + &quot; &quot; + getString(R.string.rupee_sym) + totalExpense);"
+        errorLine2="                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/activity/CurrentMonthExpenseFragment.java"
+            line="50"
+            column="33"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders."
+        errorLine1="    totalExpenseTextBox.setText(getString(R.string.total_expense) + &quot; &quot; + getString(R.string.rupee_sym) + totalExpense);"
+        errorLine2="                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/activity/CurrentWeekExpenseFragment.java"
+            line="49"
+            column="33"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders."
+        errorLine1="    totalExpenseTextBox.setText(getActivity().getString(R.string.total_expense) + &quot; &quot; + getActivity().getString(R.string.rupee_sym) + totalExpense.toString());"
+        errorLine2="                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/activity/TodaysExpenseFragment.java"
+            line="42"
+            column="33"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="Number formatting does not take into account locale settings. Consider using `String.format` instead."
+        errorLine1="    totalExpenseTextBox.setText(getActivity().getString(R.string.total_expense) + &quot; &quot; + getActivity().getString(R.string.rupee_sym) + totalExpense.toString());"
+        errorLine2="                                                                                                                                      ~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/activity/TodaysExpenseFragment.java"
+            line="42"
+            column="135"/>
+    </issue>
+
+    <issue
+        id="RtlSymmetry"
+        message="When you define `paddingLeft` you should probably also define `paddingRight` for right-to-left symmetry"
+        errorLine1="        android:paddingLeft=&quot;?android:attr/expandableListPreferredChildPaddingLeft&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/expense_header_text_box.xml"
+            line="9"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="RtlSymmetry"
+        message="When you define `paddingLeft` you should probably also define `paddingRight` for right-to-left symmetry"
+        errorLine1="        android:paddingLeft=&quot;?android:attr/expandableListPreferredChildPaddingLeft&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/expense_text_box.xml"
+            line="9"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:paddingLeft` with `android:paddingStart=&quot;?android:attr/expandableListPreferredChildPaddingLeft&quot;` to better support right-to-left layouts"
+        errorLine1="        android:paddingLeft=&quot;?android:attr/expandableListPreferredChildPaddingLeft&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/expense_header_text_box.xml"
+            line="9"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:paddingLeft` with `android:paddingStart=&quot;?android:attr/expandableListPreferredChildPaddingLeft&quot;` to better support right-to-left layouts"
+        errorLine1="        android:paddingLeft=&quot;?android:attr/expandableListPreferredChildPaddingLeft&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/expense_text_box.xml"
+            line="9"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="RtlEnabled"
+        message="The project references RTL attributes, but does not explicitly enable or disable RTL support with `android:supportsRtl` in the manifest">
+        <location
+            file="src/main/AndroidManifest.xml"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  protected void onCreate(Bundle savedInstanceState){"
+        errorLine2="                          ~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/activity/AddCategoryActivity.java"
+            line="21"
+            column="27"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public void addCategory(View view) {"
+        errorLine2="                          ~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/activity/AddCategoryActivity.java"
+            line="26"
+            column="27"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public String getCategory() {"
+        errorLine2="         ~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/activity/AddCategoryActivity.java"
+            line="38"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  String getCategory();"
+        errorLine2="  ~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/view/AddCategoryView.java"
+            line="4"
+            column="3"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public CategoryPresenter(AddCategoryView view, ExpenseDatabaseHelper database) {"
+        errorLine2="                           ~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/presenter/CategoryPresenter.java"
+            line="11"
+            column="28"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public CategoryPresenter(AddCategoryView view, ExpenseDatabaseHelper database) {"
+        errorLine2="                                                 ~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/presenter/CategoryPresenter.java"
+            line="11"
+            column="50"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {"
+        errorLine2="         ~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/activity/CurrentMonthExpenseFragment.java"
+            line="25"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {"
+        errorLine2="                           ~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/activity/CurrentMonthExpenseFragment.java"
+            line="25"
+            column="28"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {"
+        errorLine2="                                                    ~~~~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/activity/CurrentMonthExpenseFragment.java"
+            line="25"
+            column="53"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {"
+        errorLine2="                                                                         ~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/activity/CurrentMonthExpenseFragment.java"
+            line="25"
+            column="74"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public void onActivityCreated(Bundle savedInstanceState) {"
+        errorLine2="                                ~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/activity/CurrentMonthExpenseFragment.java"
+            line="30"
+            column="33"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public void displayGraph(List&lt;Bar> points) {"
+        errorLine2="                           ~~~~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/activity/CurrentMonthExpenseFragment.java"
+            line="42"
+            column="28"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public void displayTotalExpense(Long totalExpense) {"
+        errorLine2="                                  ~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/activity/CurrentMonthExpenseFragment.java"
+            line="48"
+            column="35"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public CurrentMonthExpensePresenter(CurrentMonthExpenseView view, ExpenseDatabaseHelper database) {"
+        errorLine2="                                      ~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/presenter/CurrentMonthExpensePresenter.java"
+            line="18"
+            column="39"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public CurrentMonthExpensePresenter(CurrentMonthExpenseView view, ExpenseDatabaseHelper database) {"
+        errorLine2="                                                                    ~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/presenter/CurrentMonthExpensePresenter.java"
+            line="18"
+            column="69"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  void displayGraph(List&lt;Bar> points);"
+        errorLine2="                    ~~~~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/view/CurrentMonthExpenseView.java"
+            line="8"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  void displayTotalExpense(Long totalExpense);"
+        errorLine2="                           ~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/view/CurrentMonthExpenseView.java"
+            line="10"
+            column="28"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {"
+        errorLine2="         ~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/activity/CurrentWeekExpenseFragment.java"
+            line="25"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {"
+        errorLine2="                           ~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/activity/CurrentWeekExpenseFragment.java"
+            line="25"
+            column="28"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {"
+        errorLine2="                                                    ~~~~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/activity/CurrentWeekExpenseFragment.java"
+            line="25"
+            column="53"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {"
+        errorLine2="                                                                         ~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/activity/CurrentWeekExpenseFragment.java"
+            line="25"
+            column="74"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public void onActivityCreated(Bundle savedInstanceState) {"
+        errorLine2="                                ~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/activity/CurrentWeekExpenseFragment.java"
+            line="30"
+            column="33"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public void displayCurrentWeeksExpenses(Map&lt;String, List&lt;Expense>> expensesByDate) {"
+        errorLine2="                                          ~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/activity/CurrentWeekExpenseFragment.java"
+            line="41"
+            column="43"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public void displayTotalExpenses(Long totalExpense) {"
+        errorLine2="                                   ~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/activity/CurrentWeekExpenseFragment.java"
+            line="47"
+            column="36"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public CurrentWeekExpensePresenter(ExpenseDatabaseHelper database, CurrentWeekExpenseView view) {"
+        errorLine2="                                     ~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/presenter/CurrentWeekExpensePresenter.java"
+            line="13"
+            column="38"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public CurrentWeekExpensePresenter(ExpenseDatabaseHelper database, CurrentWeekExpenseView view) {"
+        errorLine2="                                                                     ~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/presenter/CurrentWeekExpensePresenter.java"
+            line="13"
+            column="70"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  void displayCurrentWeeksExpenses(Map&lt;String, List&lt;Expense>> expensesByDate);"
+        errorLine2="                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/view/CurrentWeekExpenseView.java"
+            line="9"
+            column="36"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  void displayTotalExpenses(Long totalExpense);"
+        errorLine2="                            ~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/view/CurrentWeekExpenseView.java"
+            line="11"
+            column="29"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public CurrentWeeksExpenseAdapter(Context context, Map&lt;String, List&lt;Expense>> expenses) {"
+        errorLine2="                                    ~~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/adapter/CurrentWeeksExpenseAdapter.java"
+            line="24"
+            column="37"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public CurrentWeeksExpenseAdapter(Context context, Map&lt;String, List&lt;Expense>> expenses) {"
+        errorLine2="                                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/adapter/CurrentWeeksExpenseAdapter.java"
+            line="24"
+            column="54"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public static String getCurrentDate(){"
+        errorLine2="                ~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/utils/DateUtil.java"
+            line="18"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public static ArrayList&lt;String> getCurrentWeeksDates(){"
+        errorLine2="                ~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/utils/DateUtil.java"
+            line="22"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public static String currentMonthOfYear() {"
+        errorLine2="                ~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/utils/DateUtil.java"
+            line="34"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public static String getDayName(String dateString) {"
+        errorLine2="                ~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/utils/DateUtil.java"
+            line="40"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public static String getDayName(String dateString) {"
+        errorLine2="                                  ~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/utils/DateUtil.java"
+            line="40"
+            column="35"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public DrawerListViewAdapter(Context context) {"
+        errorLine2="                               ~~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/adapter/DrawerListViewAdapter.java"
+            line="17"
+            column="32"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public Expense(Long amount, String type, String date) {"
+        errorLine2="                 ~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/model/Expense.java"
+            line="9"
+            column="18"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public Expense(Long amount, String type, String date) {"
+        errorLine2="                              ~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/model/Expense.java"
+            line="9"
+            column="31"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public Expense(Long amount, String type, String date) {"
+        errorLine2="                                           ~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/model/Expense.java"
+            line="9"
+            column="44"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public Expense(Integer id, Long amount, String type, String date) {"
+        errorLine2="                 ~~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/model/Expense.java"
+            line="15"
+            column="18"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public Expense(Integer id, Long amount, String type, String date) {"
+        errorLine2="                             ~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/model/Expense.java"
+            line="15"
+            column="30"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public Expense(Integer id, Long amount, String type, String date) {"
+        errorLine2="                                          ~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/model/Expense.java"
+            line="15"
+            column="43"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public Expense(Integer id, Long amount, String type, String date) {"
+        errorLine2="                                                       ~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/model/Expense.java"
+            line="15"
+            column="56"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public Long getAmount() {"
+        errorLine2="         ~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/model/Expense.java"
+            line="20"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public String getType() {"
+        errorLine2="         ~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/model/Expense.java"
+            line="24"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public String getDate() {"
+        errorLine2="         ~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/model/Expense.java"
+            line="28"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public Integer getId() {"
+        errorLine2="         ~~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/model/Expense.java"
+            line="32"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public ExpenseCollection(List&lt;Expense> expenses) {"
+        errorLine2="                           ~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/utils/ExpenseCollection.java"
+            line="14"
+            column="28"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public Long getTotalExpense(){"
+        errorLine2="         ~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/utils/ExpenseCollection.java"
+            line="18"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public Map&lt;String, List&lt;Expense>> groupByDate() {"
+        errorLine2="         ~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/utils/ExpenseCollection.java"
+            line="27"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public List&lt;Expense> withoutMoneyTransfer() {"
+        errorLine2="         ~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/utils/ExpenseCollection.java"
+            line="43"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public ExpenseDatabaseHelper(Context context) {"
+        errorLine2="                               ~~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/database/ExpenseDatabaseHelper.java"
+            line="26"
+            column="32"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public List&lt;String> getExpenseTypes() {"
+        errorLine2="         ~~~~~~~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/database/ExpenseDatabaseHelper.java"
+            line="42"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public void addExpense(Expense expense) {"
+        errorLine2="                         ~~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/database/ExpenseDatabaseHelper.java"
+            line="65"
+            column="26"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public List&lt;Expense> getExpenses() {"
+        errorLine2="         ~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/database/ExpenseDatabaseHelper.java"
+            line="75"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public List&lt;Expense> getTodaysExpenses() {"
+        errorLine2="         ~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/database/ExpenseDatabaseHelper.java"
+            line="82"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public List&lt;Expense> getCurrentWeeksExpenses() {"
+        errorLine2="         ~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/database/ExpenseDatabaseHelper.java"
+            line="89"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public List&lt;Expense> getExpensesGroupByCategory() {"
+        errorLine2="         ~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/database/ExpenseDatabaseHelper.java"
+            line="95"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public List&lt;Expense> getExpensesForCurrentMonthGroupByCategory() {"
+        errorLine2="         ~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/database/ExpenseDatabaseHelper.java"
+            line="101"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public void addExpenseType(ExpenseType type) {"
+        errorLine2="                             ~~~~~~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/database/ExpenseDatabaseHelper.java"
+            line="107"
+            column="30"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public void truncate(String tableName) {"
+        errorLine2="                       ~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/database/ExpenseDatabaseHelper.java"
+            line="115"
+            column="24"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {"
+        errorLine2="         ~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/activity/ExpenseFragment.java"
+            line="25"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {"
+        errorLine2="                           ~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/activity/ExpenseFragment.java"
+            line="25"
+            column="28"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {"
+        errorLine2="                                                    ~~~~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/activity/ExpenseFragment.java"
+            line="25"
+            column="53"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {"
+        errorLine2="                                                                         ~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/activity/ExpenseFragment.java"
+            line="25"
+            column="74"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public void onActivityCreated(Bundle savedInstanceState) {"
+        errorLine2="                                ~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/activity/ExpenseFragment.java"
+            line="30"
+            column="33"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public String getAmount() {"
+        errorLine2="         ~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/activity/ExpenseFragment.java"
+            line="43"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public String getType() {"
+        errorLine2="         ~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/activity/ExpenseFragment.java"
+            line="49"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public void renderExpenseTypes(List&lt;String> expenseTypes) {"
+        errorLine2="                                 ~~~~~~~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/activity/ExpenseFragment.java"
+            line="55"
+            column="34"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public ExpensePresenter(ExpenseDatabaseHelper expenseDatabaseHelper, ExpenseView view) {"
+        errorLine2="                          ~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/presenter/ExpensePresenter.java"
+            line="14"
+            column="27"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public ExpensePresenter(ExpenseDatabaseHelper expenseDatabaseHelper, ExpenseView view) {"
+        errorLine2="                                                                       ~~~~~~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/presenter/ExpensePresenter.java"
+            line="14"
+            column="72"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public static String getExpensesForDate(String date){"
+        errorLine2="                ~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/table/ExpenseTable.java"
+            line="23"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public static String getExpensesForDate(String date){"
+        errorLine2="                                          ~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/table/ExpenseTable.java"
+            line="23"
+            column="43"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public static String getConsolidatedExpensesForDates(ArrayList&lt;String> dates) {"
+        errorLine2="                ~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/table/ExpenseTable.java"
+            line="27"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public static String getConsolidatedExpensesForDates(ArrayList&lt;String> dates) {"
+        errorLine2="                                                       ~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/table/ExpenseTable.java"
+            line="27"
+            column="56"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public static String getExpenseForCurrentMonth(String currentMonthOfYear) {"
+        errorLine2="                ~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/table/ExpenseTable.java"
+            line="36"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public static String getExpenseForCurrentMonth(String currentMonthOfYear) {"
+        errorLine2="                                                 ~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/table/ExpenseTable.java"
+            line="36"
+            column="50"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public ExpenseType(String type) {"
+        errorLine2="                     ~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/model/ExpenseType.java"
+            line="6"
+            column="22"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public String getType() {"
+        errorLine2="         ~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/model/ExpenseType.java"
+            line="10"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public static List&lt;ExpenseType> seedData(){"
+        errorLine2="                ~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/table/ExpenseTypeTable.java"
+            line="17"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  String getAmount();"
+        errorLine2="  ~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/view/ExpenseView.java"
+            line="6"
+            column="3"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  String getType();"
+        errorLine2="  ~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/view/ExpenseView.java"
+            line="7"
+            column="3"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  void renderExpenseTypes(List&lt;String> expenseTypes);"
+        errorLine2="                          ~~~~~~~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/view/ExpenseView.java"
+            line="8"
+            column="27"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public void schedule(Context context) {"
+        errorLine2="                       ~~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/notification/FillExpenseNotificationScheduler.java"
+            line="12"
+            column="24"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public HomeViewPagerAdapter(FragmentManager supportFragmentManager) {"
+        errorLine2="                              ~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/adapter/HomeViewPagerAdapter.java"
+            line="13"
+            column="31"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public Fragment getItem(int position) {"
+        errorLine2="         ~~~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/adapter/HomeViewPagerAdapter.java"
+            line="18"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  protected void onCreate(Bundle savedInstanceState) {"
+        errorLine2="                          ~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/activity/MainActivity.java"
+            line="42"
+            column="27"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public void render(Fragment fragment) {"
+        errorLine2="                     ~~~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/activity/MainActivity.java"
+            line="53"
+            column="22"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public void onConfigurationChanged(Configuration newConfig) {"
+        errorLine2="                                     ~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/activity/MainActivity.java"
+            line="89"
+            column="38"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  protected void onPostCreate(Bundle savedInstanceState) {"
+        errorLine2="                              ~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/activity/MainActivity.java"
+            line="95"
+            column="31"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public boolean onOptionsItemSelected(MenuItem item) {"
+        errorLine2="                                       ~~~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/activity/MainActivity.java"
+            line="101"
+            column="40"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="    void render(Fragment fragment);"
+        errorLine2="                ~~~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/view/NavigationDrawerItemView.java"
+            line="7"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public NavigationDrawerPresenter(NavigationDrawerItemView view) {"
+        errorLine2="                                   ~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/presenter/NavigationDrawerPresenter.java"
+            line="14"
+            column="36"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public void onItemSelected(String drawerItem) {"
+        errorLine2="                             ~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/presenter/NavigationDrawerPresenter.java"
+            line="18"
+            column="30"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {"
+        errorLine2="         ~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/activity/TodaysExpenseFragment.java"
+            line="24"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {"
+        errorLine2="                           ~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/activity/TodaysExpenseFragment.java"
+            line="24"
+            column="28"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {"
+        errorLine2="                                                    ~~~~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/activity/TodaysExpenseFragment.java"
+            line="24"
+            column="53"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {"
+        errorLine2="                                                                         ~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/activity/TodaysExpenseFragment.java"
+            line="24"
+            column="74"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public void onActivityCreated(Bundle savedInstanceState) {"
+        errorLine2="                                ~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/activity/TodaysExpenseFragment.java"
+            line="29"
+            column="33"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public void displayTotalExpense(Long totalExpense) {"
+        errorLine2="                                  ~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/activity/TodaysExpenseFragment.java"
+            line="40"
+            column="35"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public void displayTodaysExpenses(List&lt;Expense> expenses) {"
+        errorLine2="                                    ~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/activity/TodaysExpenseFragment.java"
+            line="46"
+            column="37"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public TodaysExpenseListViewAdapter(List&lt;Expense> expenses, Context context, int resource) {"
+        errorLine2="                                      ~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/adapter/TodaysExpenseListViewAdapter.java"
+            line="13"
+            column="39"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public TodaysExpenseListViewAdapter(List&lt;Expense> expenses, Context context, int resource) {"
+        errorLine2="                                                              ~~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/adapter/TodaysExpenseListViewAdapter.java"
+            line="13"
+            column="63"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public TodaysExpensePresenter(TodaysExpenseView view, ExpenseDatabaseHelper expenseDatabaseHelper) {"
+        errorLine2="                                ~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/presenter/TodaysExpensePresenter.java"
+            line="14"
+            column="33"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  public TodaysExpensePresenter(TodaysExpenseView view, ExpenseDatabaseHelper expenseDatabaseHelper) {"
+        errorLine2="                                                        ~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/presenter/TodaysExpensePresenter.java"
+            line="14"
+            column="57"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  void displayTotalExpense(Long totalExpense);"
+        errorLine2="                           ~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/view/TodaysExpenseView.java"
+            line="8"
+            column="28"/>
+    </issue>
+
+    <issue
+        id="UnknownNullness"
+        message="Unknown nullability; explicitly declare as `@Nullable` or `@NonNull` to improve Kotlin interoperability; see https://developer.android.com/kotlin/interop#nullability_annotations"
+        errorLine1="  void displayTodaysExpenses(List&lt;Expense> expenses);"
+        errorLine2="                             ~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/ajitsingh/com/expensemanager/view/TodaysExpenseView.java"
+            line="9"
+            column="30"/>
+    </issue>
+
+</issues>
