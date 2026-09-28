@@ -8,43 +8,17 @@ java {
 }
 
 android {
-    namespace "ajitsingh.com.expensemanager"
-    compileSdk 34 
+    namespace 'ajitsingh.com.expensemanager'
+    compileSdk 34
 
     defaultConfig {
         applicationId "ajitsingh.com.expensemanager"
         minSdk 24
-        targetSdk 34 
+        targetSdk 34
         versionCode 1
         versionName "1.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-    }
-
-    lint {
-        baseline = file("lint-baseline.xml")
-        // optional: keep it strict for new issues
-        checkAllWarnings = true
-        abortOnError = true
-    }
-
-    testOptions {
-        unitTests.all {
-            systemProperty 'mockito.mock-maker', 'inline'
-            jvmArgs(
-                '--add-opens', 'java.base/java.lang=ALL-UNNAMED',
-                '--add-opens', 'java.base/java.lang.reflect=ALL-UNNAMED',
-                '--add-opens', 'java.base/java.util=ALL-UNNAMED',
-                '--add-opens', 'java.base/java.io=ALL-UNNAMED',
-                '--add-opens', 'java.base/java.security=ALL-UNNAMED',
-            )
-        }
-    }
-    
-    // Add this for JDK 21 compatibility with AGP
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_17
-        targetCompatibility JavaVersion.VERSION_17
     }
 
     buildTypes {
@@ -54,13 +28,28 @@ android {
         }
     }
 
-    packagingOptions {
-        excludes += 'LICENSE'
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    packaging {
+        resources {
+            excludes += 'LICENSE'
+        }
+    }
+
+    testOptions {
+        unitTests.all {
+            jvmArgs(
+                '--add-opens', 'java.base/java.lang=ALL-UNNAMED',
+                '--add-opens', 'java.base/java.util=ALL-UNNAMED',
+            )
+        }
     }
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'org.quanqi:android-holo-graph:0.1.0'
     implementation 'joda-time:joda-time:2.12.7'
@@ -69,11 +58,12 @@ dependencies {
     testImplementation 'org.mockito:mockito-core:5.14.2'
     testImplementation 'joda-time:joda-time:2.12.7'
 
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
-    androidTestImplementation 'androidx.test.espresso:espresso-contrib:3.3.0'
-    androidTestImplementation 'androidx.test.espresso:espresso-intents:3.3.0'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-contrib:3.5.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-intents:3.5.1'
 }
+
 configurations.all {
     resolutionStrategy {
         force 'net.bytebuddy:byte-buddy:1.15.10'
@@ -81,6 +71,3 @@ configurations.all {
         force 'org.objenesis:objenesis:3.4'
     }
 }
-// plugins {
-//     id 'org.sonarqube' version '4.4.1.3373'
-// }
