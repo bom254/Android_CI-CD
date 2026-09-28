@@ -1,6 +1,12 @@
 apply plugin: 'com.android.application'
 apply plugin: "org.sonarqube"
 
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
 android {
     namespace "ajitsingh.com.expensemanager"
     compileSdk 34 
@@ -20,6 +26,19 @@ android {
         // optional: keep it strict for new issues
         checkAllWarnings = true
         abortOnError = true
+    }
+
+    testOptions {
+        unitTests.all {
+            systemProperty 'mockito.mock-maker', 'inline'
+            jvmArgs(
+                '--add-opens', 'java.base/java.lang=ALL-UNNAMED',
+                '--add-opens', 'java.base/java.lang.reflect=ALL-UNNAMED',
+                '--add-opens', 'java.base/java.util=ALL-UNNAMED',
+                '--add-opens', 'java.base/java.io=ALL-UNNAMED',
+                '--add-opens', 'java.base/java.security=ALL-UNNAMED',
+            )
+        }
     }
     
     // Add this for JDK 21 compatibility with AGP
@@ -44,18 +63,24 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'org.quanqi:android-holo-graph:0.1.0'
-    implementation 'joda-time:joda-time:2.8.2'
+    implementation 'joda-time:joda-time:2.12.7'
 
-    testImplementation 'junit:junit:4.12'
-    testImplementation 'org.mockito:mockito-core:1.10.19'
-    testImplementation 'joda-time:joda-time:2.8.2'
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'org.mockito:mockito-core:5.14.2'
+    testImplementation 'joda-time:joda-time:2.12.7'
 
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     androidTestImplementation 'androidx.test.espresso:espresso-contrib:3.3.0'
     androidTestImplementation 'androidx.test.espresso:espresso-intents:3.3.0'
 }
-
+configurations.all {
+    resolutionStrategy {
+        force 'net.bytebuddy:byte-buddy:1.15.10'
+        force 'net.bytebuddy:byte-buddy-agent:1.15.10'
+        force 'org.objenesis:objenesis:3.4'
+    }
+}
 // plugins {
 //     id 'org.sonarqube' version '4.4.1.3373'
 // }
