@@ -8,25 +8,27 @@ on:
 
 env:
   SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+  JAVA_VERSION: '21'   
 
 jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      # - name: set up JDK
-      #   uses: actions/setup-java@v4
-      #   with:
-      #     distribution: jetbrains
-      #     java-version: 21
-      #     cache: gradle
+      - name: set up JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin   
+          java-version: ${{ env.JAVA_VERSION }}
+          cache: gradle
 
-      # - name: Run Lint debug
-      #   run: ./gradlew lintDebug
+      - name: Run Lint debug
+        run: ./gradlew lintDebug --stacktrace
 
       - name: Upload Lint report
+        if: always()   # upload even when lint fails, so you can read the report
         uses: actions/upload-artifact@v4
         with:
           name: lint.html
@@ -35,14 +37,22 @@ jobs:
   unit-test: #for running tests withing the codebase present in the app/src folder
     needs: [lint]
     runs-on: ubuntu-latest
-    steps: 
+    steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+
+      - name: set up JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: ${{ env.JAVA_VERSION }}
+          cache: gradle
 
       - name: Run tests
-        run: ./gradlew test 
+        run: ./gradlew testDebugUnitTest --stacktrace
 
       - name: Upload test report
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: unit_test_report
@@ -50,18 +60,35 @@ jobs:
 
   instrumentation-test: # for running android tests on the emulator
     needs: [unit-test]
-    runs-on: macos-latest # Due to it's fast boot time,
+    runs-on: macos-latest  
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+
+      - name: set up JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: ${{ env.JAVA_VERSION }}
+          cache: gradle
+
+      - name: Enable KVM   # x86_64 emulator needs hardware acceleration on Linux runners
+        run: |
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' \
+            | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules
+          sudo udevadm trigger --name-match=kvm
 
       - name: Run espresso tests
         uses: reactivecircus/android-emulator-runner@v2
-        with: 
-          api-level: 29
-          script: ./gradlew connectedCheck
+        with:
+          api-level: 34   
+          arch: x86_64
+          profile: pixel_5
+          script: ./gradlew connectedDebugAndroidTest --stacktrace
 
       - name: upload test report
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: instrumentation_test_report
@@ -72,29 +99,34 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
-
+        uses: actions/checkout@v4
+  
       - name: set up JDK 11
-        uses: actions/setup-java@v5
+        uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: 17
-
+          cache: gradle
+  
       - name: SonarCloud Scan
-        run: ./gradlew app:sonarqube -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+        run: ./gradlew app:sonarqube -Dsonar.token=${{ secrets.SONAR_TOKEN }}
+  
+  
 
   package:
-    needs: [static-code-analysis]
+    needs: [lint, unit-test]   
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Setup JDK 1.8
-        uses: actions/setup-java@v5
+      - name: Setup JDK   
+        uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: 18
+          java-version: ${{ env.JAVA_VERSION }}
+          cache: gradle
+
       - name: Build debug APK
         run: ./gradlew assembleDebug --stacktrace
 

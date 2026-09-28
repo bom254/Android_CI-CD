@@ -56,3 +56,6 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-intents:3.3.0'
 }
 
+plugins {
+    id 'org.sonarqube' version '4.4.1.3373'
+}
