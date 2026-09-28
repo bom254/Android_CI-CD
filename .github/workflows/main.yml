@@ -43,40 +43,23 @@ jobs:
 
   instrumentation-test: # for running android tests on the emulator
     needs: [unit-test]
-    runs-on: macos-latest  
+    runs-on: macos-latest # Due to it's fast boot time,
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: set up JDK
-        uses: actions/setup-java@v4
-        with:
-          distribution: temurin
-          java-version: ${{ env.JAVA_VERSION }}
-          cache: gradle
-
-      - name: Enable KVM   # x86_64 emulator needs hardware acceleration on Linux runners
-        run: |
-          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' \
-            | sudo tee /etc/udev/rules.d/99-kvm4all.rules
-          sudo udevadm control --reload-rules
-          sudo udevadm trigger --name-match=kvm
+        uses: actions/checkout@v3
 
       - name: Run espresso tests
         uses: reactivecircus/android-emulator-runner@v2
-        with:
-          api-level: 34   
-          arch: x86_64
-          profile: pixel_5
-          script: ./gradlew connectedDebugAndroidTest --stacktrace
+        with: 
+          api-level: 29
+          script: ./gradlew connectedCheck
 
       - name: upload test report
-        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: instrumentation_test_report
           path: app/build/reports/androidTests/connected/
-
+          
   static-code-analysis:
     needs: [instrumentation-test]
     runs-on: ubuntu-latest
