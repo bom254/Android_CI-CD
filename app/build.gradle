@@ -84,12 +84,9 @@ configurations.all {
 sonar {
     properties {
         property "sonar.sources", "src/main"
-        property "sonar.tests", "src/test,src/androidTest"
+        property "sonar.tests", "src/test"
+        property "sonar.exclusions", "**/build/**,**/androidTest/**"
+        property "sonar.test.exclusions", "**/build/**,**/androidTest/**"
     }
 }
-// sonar {
-//     properties {
-//         property "sonar.test.exclusions", "**/AndroidManifest.xml"
-//     }
-// }
 
