@@ -81,9 +81,9 @@ configurations.all {
         force 'org.objenesis:objenesis:3.4'
     }
 }
-sonar {
-    properties {
-        property "sonar.test.exclusions", "**/AndroidManifest.xml"
-    }
-}
+// sonar {
+//     properties {
+//         property "sonar.test.exclusions", "**/AndroidManifest.xml"
+//     }
+// }
 
