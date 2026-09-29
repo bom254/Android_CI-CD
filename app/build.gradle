@@ -86,3 +86,40 @@ sonar {
         property "sonar.test.exclusions", "**/AndroidManifest.xml"
     }
 }
+
+afterEvaluate {
+    def resolverTask = tasks.findByName('sonarResolver')
+    if (resolverTask != null) {
+        def adjustSonarTask = tasks.register('adjustSonar') {
+            dependsOn resolverTask
+            doLast {
+                def resolverFile = resolverTask.outputFile
+                if (!resolverFile.exists()) return
+
+                // The resolver file is serialized Java properties; parse and rewrite it
+                def props = new Properties()
+                resolverFile.withInputStream { props.load(it) }
+
+                def sources = props.getProperty('android.sources')
+                def tests = props.getProperty('android.tests')
+
+                if (sources == null || tests == null) return
+
+                // Remove the AndroidManifest.xml from the tests list so it's only in sources
+                def testList = tests.split(',') as List
+                def cleanedTests = testList.findAll { !it.contains('AndroidManifest.xml') }
+
+                if (cleanedTests.size() < testList.size()) {
+                    props.setProperty('android.tests', cleanedTests.join(','))
+                    resolverFile.withOutputStream { props.store(it, null) }
+                    logger.lifecycle("adjustSonar: removed duplicate AndroidManifest.xml from test scope")
+                }
+            }
+        }
+
+        // Make the main sonar task depend on our cleanup task
+        tasks.named('sonar').configure {
+            dependsOn adjustSonarTask
+        }
+    }
+}
