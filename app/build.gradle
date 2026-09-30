@@ -81,12 +81,12 @@ configurations.all {
         force 'org.objenesis:objenesis:3.4'
     }
 }
-sonar {
-    properties {
-        property "sonar.sources", "src/main"
-        property "sonar.tests", "src/test"
-        property "sonar.exclusions", "**/build/**,**/androidTest/**"
-        property "sonar.test.exclusions", "**/build/**,**/src/androidTest/**, **/src/test/**"
-    }
-}
+// sonar {
+//     properties {
+//         property "sonar.sources", "src/main"
+//         property "sonar.tests", "src/test"
+//         property "sonar.exclusions", "**/build/**,**/androidTest/**"
+//         property "sonar.test.exclusions", "**/build/**,**/src/androidTest/**, **/src/test/**"
+//     }
+// }
 
