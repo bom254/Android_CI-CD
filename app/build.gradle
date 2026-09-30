@@ -83,15 +83,9 @@ configurations.all {
 }
 sonar {
     properties {
-        property "sonar.sources", "src/main"
-        property "sonar.tests", "src/test,src/androidTest"
-
-        property "sonar.exclusions", "**/build/**"
-
-        property "sonar.host.url", "https://sonarcloud.io"
-        property "sonar.organization", "bom254"
         property "sonar.projectKey", "bom254_Android_CI-CD"
-        property "sonar.projectName", "Expense-Manager"
+        property "sonar.organization", "bom254"
+        property "sonar.host.url", "https://sonarcloud.io"
     }
 }
 
