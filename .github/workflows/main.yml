@@ -17,15 +17,15 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # - name: Run Lint debug
-      #   run: ./gradlew lintDebug
+      - name: Run Lint debug
+        run: ./gradlew lintDebug
 
-      # - name: Upload Lint report
-      #   uses: actions/upload-artifact@v4
-      #   with:
-      #     name: lint.html
-      #     path: app/build/reports/lint-results-debug.html
-      
+      - name: Upload Lint report
+        uses: actions/upload-artifact@v4
+        with:
+          name: lint.html
+          path: app/build/reports/lint-results-debug.html
+
   unit-test: #for running tests withing the codebase present in the app/src folder
     needs: [lint]
     runs-on: ubuntu-latest
@@ -33,14 +33,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # - name: Run tests
-      #   run: ./gradlew test 
+      - name: Run tests
+        run: ./gradlew test 
 
-      # - name: Upload test report
-      #   uses: actions/upload-artifact@v4
-      #   with:
-      #     name: unit_test_report
-      #     path: app/build/reports/tests/testDebugUnitTest/
+      - name: Upload test report
+        uses: actions/upload-artifact@v4
+        with:
+          name: unit_test_report
+          path: app/build/reports/tests/testDebugUnitTest/
 
   instrumentation-test: 
     needs: [unit-test]
@@ -49,34 +49,34 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
 
-    # - name: set up JDK
-    #   uses: actions/setup-java@v4
-    #   with:
-    #     distribution: temurin
-    #     java-version: 21
-    #     cache: gradle
+    - name: set up JDK
+      uses: actions/setup-java@v4
+      with:
+        distribution: temurin
+        java-version: 21
+        cache: gradle
 
-    # - name: Enable KVM   
-    #   run: |
-    #     echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' \
-    #       | sudo tee /etc/udev/rules.d/99-kvm4all.rules
-    #     sudo udevadm control --reload-rules
-    #     sudo udevadm trigger --name-match=kvm
+    - name: Enable KVM   
+      run: |
+        echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' \
+          | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+        sudo udevadm control --reload-rules
+        sudo udevadm trigger --name-match=kvm
 
-    # - name: Run espresso tests
-    #   uses: reactivecircus/android-emulator-runner@v2
-    #   with:
-    #     api-level: 34
-    #     arch: x86_64           
-    #     profile: pixel_5
-    #     script: ./gradlew connectedDebugAndroidTest --stacktrace
+    - name: Run espresso tests
+      uses: reactivecircus/android-emulator-runner@v2
+      with:
+        api-level: 34
+        arch: x86_64           
+        profile: pixel_5
+        script: ./gradlew connectedDebugAndroidTest --stacktrace
 
-    # - name: upload test report
-    #   if: always()
-    #   uses: actions/upload-artifact@v4
-    #   with:
-    #     name: instrumentation_test_report
-    #     path: app/build/reports/androidTests/connected/
+    - name: upload test report
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: instrumentation_test_report
+        path: app/build/reports/androidTests/connected/
 
   static-code-analysis:
     needs: [instrumentation-test]
