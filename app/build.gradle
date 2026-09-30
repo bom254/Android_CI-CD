@@ -9,12 +9,12 @@ java {
 
 android {
     namespace "ajitsingh.com.expensemanager"
-    compileSdk 34 
+    compileSdk 34
 
     defaultConfig {
         applicationId "ajitsingh.com.expensemanager"
         minSdk 24
-        targetSdk 34 
+        targetSdk 34
         versionCode 1
         versionName "1.1"
 
@@ -23,7 +23,6 @@ android {
 
     lint {
         baseline = file("lint-baseline.xml")
-        // optional: keep it strict for new issues
         checkAllWarnings = true
         abortOnError = true
     }
@@ -36,12 +35,11 @@ android {
                 '--add-opens', 'java.base/java.lang.reflect=ALL-UNNAMED',
                 '--add-opens', 'java.base/java.util=ALL-UNNAMED',
                 '--add-opens', 'java.base/java.io=ALL-UNNAMED',
-                '--add-opens', 'java.base/java.security=ALL-UNNAMED',
+                '--add-opens', 'java.base/java.security=ALL-UNNAMED'
             )
         }
     }
-    
-    // Add this for JDK 21 compatibility with AGP
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17
@@ -50,7 +48,9 @@ android {
     buildTypes {
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile(
+                'proguard-android-optimize.txt'
+            ), 'proguard-rules.pro'
         }
     }
 
@@ -59,34 +59,16 @@ android {
     }
 }
 
-dependencies {
-    implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'org.quanqi:android-holo-graph:0.1.0'
-    implementation 'joda-time:joda-time:2.12.7'
+sonar {
+    properties {
+        property "sonar.sources", "src/main"
+        property "sonar.tests", "src/test,src/androidTest"
 
-    testImplementation 'junit:junit:4.13.2'
-    testImplementation 'org.mockito:mockito-core:5.14.2'
-    testImplementation 'joda-time:joda-time:2.12.7'
+        property "sonar.exclusions", "**/build/**"
 
-    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-contrib:3.5.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-intents:3.5.1'
-}
-
-configurations.all {
-    resolutionStrategy {
-        force 'net.bytebuddy:byte-buddy:1.15.10'
-        force 'net.bytebuddy:byte-buddy-agent:1.15.10'
-        force 'org.objenesis:objenesis:3.4'
+        property "sonar.host.url", "https://sonarcloud.io"
+        property "sonar.organization", "bom254"
+        property "sonar.projectKey", "bom254_Android_CI-CD"
+        property "sonar.projectName", "Expense-Manager"
     }
 }
-// sonar {
-//     properties {
-//         property "sonar.sources", "src/main"
-//         property "sonar.tests", "src/test"
-//         property "sonar.exclusions", "**/build/**,**/androidTest/**"
-//         property "sonar.test.exclusions", "**/build/**,**/src/androidTest/**, **/src/test/**"
-//     }
-// }
-
